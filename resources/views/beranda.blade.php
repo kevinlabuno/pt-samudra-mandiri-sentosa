@@ -6,16 +6,16 @@
     <p>This is the main page of your website where you can add an overview or important updates.</p>
     <div class="stats">
         <div class="stat-card">
-            <h3>Total Users</h3>
-            <p>1,234</p>
+            <h3>Total Inventaris</h3>
+            <p>{{ $totalInventaris }}</p>
         </div>
         <div class="stat-card">
-            <h3>Active Sessions</h3>
-            <p>567</p>
+            <h3>Total Bom</h3>
+            <p>{{ $totalBom }}</p>
         </div>
         <div class="stat-card">
-            <h3>New Messages</h3>
-            <p>89</p>
+            <h3>Total Ikan</h3>
+            <p>{{ $totalIkan }}</p>
         </div>
     </div>
 </div>

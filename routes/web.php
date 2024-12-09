@@ -15,6 +15,7 @@ use App\Http\Controllers\MesinController;
 use App\Http\Controllers\InventarisController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return view('login');
@@ -82,6 +83,9 @@ Route::put('/inventaris/{id}', [InventarisController::class, 'update'])->name('i
 Route::delete('/inventaris/{id}', [InventarisController::class, 'destroy'])->name('inventaris.destroy');
 
 Route::resource('users', UserController::class);
+
+    Route::get('/profile', [ProfileController::class, 'view'])->name('profile.view');
+    Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 });
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
