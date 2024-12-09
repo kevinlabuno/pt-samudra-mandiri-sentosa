@@ -14,6 +14,7 @@ use App\Http\Controllers\BomController;
 use App\Http\Controllers\MesinController;
 use App\Http\Controllers\InventarisController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('login');
@@ -82,3 +83,5 @@ Route::delete('/inventaris/{id}', [InventarisController::class, 'destroy'])->nam
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.authenticate');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::resource('users', UserController::class);
