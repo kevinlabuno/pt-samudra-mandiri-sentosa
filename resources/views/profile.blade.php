@@ -143,9 +143,9 @@
             </div>
         </div>
         <div class="text-center mt-4">
-            <button class="btn btn-light" style="color: #153B5F; font-weight: bold; padding: 10px 20px; border-radius: 5px;" data-bs-toggle="modal" data-bs-target="#editProfileModal">
-                Edit Profile
-            </button>
+<button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#editProfileModal">
+    Edit Profile
+</button>
         </div>
     </div>
 </div>
@@ -179,4 +179,18 @@
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-XvPZZKR+HdF8Oz+REwhYSKs0pHBRtjEup5XZEKxpb1o3U2Mt+UzH+VPc8VVcH3jr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-5XD0IjBbtHL7UXVHrB0BPAHpe87V3CPcBPiJYzyUImgyL9NY9z8C9o5uH1Qz0OBR" crossorigin="anonymous"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Tambahkan event listener jika diperlukan
+        const editButton = document.querySelector('[data-bs-target="#editProfileModal"]');
+        editButton.addEventListener('click', () => {
+            const modalElement = document.getElementById('editProfileModal');
+            const bootstrapModal = new bootstrap.Modal(modalElement);
+            bootstrapModal.show();
+        });
+    });
+</script>
 @endsection
