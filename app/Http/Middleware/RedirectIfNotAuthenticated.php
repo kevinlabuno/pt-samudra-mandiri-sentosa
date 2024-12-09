@@ -13,9 +13,12 @@ class RedirectIfNotAuthenticated
      */
     public function handle(Request $request, Closure $next)
     {
+        // Jika pengguna belum login, redirect ke halaman login
         if (!Auth::check()) {
             return redirect()->route('login');
         }
+
+        // Jika pengguna sudah login, lanjutkan request
         return $next($request);
     }
 }

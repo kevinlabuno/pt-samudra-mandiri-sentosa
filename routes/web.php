@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view('login');
 });
 
+Route::middleware('auth')->group(function () {
 Route::get('beranda', [BerandaController::class , 'index'])->name('beranda');
 Route::get('data', [DataController::class , 'index'])->name('data');
 
@@ -80,8 +81,9 @@ Route::post('/inventaris', [InventarisController::class, 'store'])->name('invent
 Route::put('/inventaris/{id}', [InventarisController::class, 'update'])->name('inventaris.update');
 Route::delete('/inventaris/{id}', [InventarisController::class, 'destroy'])->name('inventaris.destroy');
 
+Route::resource('users', UserController::class);
+});
+
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.authenticate');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
-Route::resource('users', UserController::class);

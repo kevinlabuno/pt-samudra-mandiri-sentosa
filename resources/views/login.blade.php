@@ -133,7 +133,6 @@
             </div>
         @endif
 
-        <!-- Login Form -->
         <form action="{{ route('login.authenticate') }}" method="POST">
             @csrf
             <div class="form-group">
